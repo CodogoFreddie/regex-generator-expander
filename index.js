@@ -1,9 +1,46 @@
+const R = require("ramda")
+
+const pickRandomFromList = xs => xs[Math.floor( Math.random() * xs.length )]
+
+const rgeTemplate = ( strings, ...functions ) => {
+	return () => R.pipe(
+		R.map( ([str, fn]) => str + fn() ),
+		R.append(R.nth(-1, strings)),
+		R.join(""),
+	)(R.zip(strings, functions))
+}
+
+const rgeObj = obj => {
+	let generators = {}
+
+	generators = R.pipe(
+		R.map( fn => () => {
+			const nextGenerator = pickRandomFromList(fn(generators))
+
+			if(typeof nextGenerator === "string"){
+				return nextGenerator
+			} else {
+				return nextGenerator()
+			}
+		})
+	)(obj)
+
+	return generators
+}
+
 const rge = (...args) => {
-	console.log(args)	
+	if(args.length === 1){
+		return rgeObj(...args)	
+	} else {
+		return rgeTemplate(...args)
+	}
 }
 
 const generator = rge({
-	foo: ({ foo }) => [ rge`${foo}, ${foo}`, rge`${foo}, aka ${foo}`, rge`${foo}, also known as ${foo}` ]
+	root: ({ root, honorific, adjective, noun, }) => [ rge`${honorific} ${adjective} ${noun}`, rge`${root}, ${root}`, ],
+	honorific: () => [ "mr", "Dr.", ],
+	adjective: () => [ "lil'", "big", ],
+	noun: () => [ "ibuprophen", "ferari"],
 })
 
-console.log(generator())
+console.log(generator.root())
