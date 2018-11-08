@@ -37,10 +37,20 @@ const rge = (...args) => {
 }
 
 const generator = rge({
-	root: ({ root, honorific, adjective, noun, }) => [ rge`${honorific} ${adjective} ${noun}`, rge`${root}, ${root}`, ],
-	honorific: () => [ "mr", "Dr.", ],
-	adjective: () => [ "lil'", "big", ],
-	noun: () => [ "ibuprophen", "ferari"],
+	root: ({ unaugmentedRoot,  maffia, self, }) => [
+		rge`The ${maffia}: ${unaugmentedRoot}`,
+		rge`${unaugmentedRoot} ${self}`,
+	],
+	unaugmentedRoot: ({ honorific, adjective, noun,}) => [
+		rge`${honorific} ${adjective} ${noun}`,
+	],
+	self: () => [ "themself", "herself", "himself" ],
+	maffia: ({ adjective }) => [ "don", "godfather", rge`${adjective} boss` ],
+	honorific: () => [ "Mr.", "Ms.", "Dr.", ],
+	adjective: () => [ "lil'", "big", "smooth", ],
+	noun: () => [ "ibuprophen", "paracetamol", "lemsip", "ferari"],
 })
 
-console.log(generator.root())
+for (const x in Array.from({ length: 3 })) {
+	console.log(generator.root())
+}
