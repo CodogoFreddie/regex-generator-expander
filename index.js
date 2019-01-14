@@ -50,11 +50,11 @@ const generator = rge({
 	bigSean: ({ simpleAdjective, identity }) => [rge`${simpleAdjective} ${identity}`],
 
 	simpleAdjective: ({ size, simpleValueJudgement, age }) => [ size, simpleValueJudgement, age ],
-	simpleValueJudgement: () => [ "Bad", "Nasty", "Stinky", "Smooth", "Wild", "Incomprehensible" ],
+	simpleValueJudgement: () => [ "Bad", "Nasty", "Stinky", "Smooth", "Wild", "Incomprehensible", "Fruity", "Hot", ],
 	size: () => [ "Lil'", "Big", "Short", "Fat", "Phat", "Large", "Wide", ],
 	age: () => [ "Young", "Old", "Middle Aged", ],
 
-	identity: () => [ "Stinker", "Nasty", "Paul", "Ibuprophen", "Paracetamol", "Lemsip", "Ferari", "Stinker", "Boi", "Boy", "Shorty","Fatty", "Man", "Woman", "Beans",],
+	identity: () => [ "Stinker", "Nasty", "Paul", "Ibuprophen", "Paracetamol", "Lemsip", "Ferari", "Stinker", "Boi", "Boy", "Shorty","Fatty", "Man", "Woman", "Beans", "Money", "Pappa", "Mamma", ],
 
 	role: ({ subject, position, }) => [
 		rge`${position} of ${subject}`,
@@ -64,7 +64,7 @@ const generator = rge({
 	subject: () => ["Piss", "Money", "$$$", "Dollas", "Gold Bars", "Rhyming Couplets", "Shit Talking", "Fire Beats", "Doing Big Shits", "Being Good At Rapping"],
 	position: ({ simpleAdjective, position }) => [
 		...new Array(3).fill(rge`${simpleAdjective} ${position}`),
-		"Ninja", "Doctor", "MC", "Duke", "Master", "Lord", "Don", "Ring Master", "Madame",
+		"Ninja", "Doctor", "MC", "Duke", "Master", "Lord", "Don", "Ring Master", "Madame", "Grand Vizier","Archdeacon"
 	],
 })
 
