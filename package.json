@@ -1,23 +1,24 @@
 {
-  "name": "regex-generator-expander",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "ramda": "^0.25.0"
-  },
-  "prettier": {
-    "singleQuote": false,
-    "tabWidth": 4,
-    "useTabs": true,
-    "trailingComma": "all"
-  },
-  "devDependencies": {
-    "prettier": "^1.15.3"
-  }
+	"name": "regex-generator-expander",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"ramda": "^0.25.0"
+	},
+	"prettier": {
+		"singleQuote": false,
+		"tabWidth": 4,
+		"useTabs": true,
+		"trailingComma": "all",
+		"printWidth": 120
+	},
+	"devDependencies": {
+		"prettier": "^1.15.3"
+	}
 }
