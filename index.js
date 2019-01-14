@@ -54,7 +54,7 @@ const generator = rge({
 	size: () => [ "Lil'", "Big", "Short", "Fat", "Phat", "Large", "Wide", ],
 	age: () => [ "Young", "Old", "Middle Aged", ],
 
-	identity: () => [ "Stinker", "Nasty", "Paul", "Ibuprophen", "Paracetamol", "Lemsip", "Ferari", "Stinker", "Boi", "Boy", "Shorty","Fatty", "Man", "Woman",],
+	identity: () => [ "Stinker", "Nasty", "Paul", "Ibuprophen", "Paracetamol", "Lemsip", "Ferari", "Stinker", "Boi", "Boy", "Shorty","Fatty", "Man", "Woman", "Beans",],
 
 	role: ({ subject, position, }) => [
 		rge`${position} of ${subject}`,
