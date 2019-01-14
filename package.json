@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "ramda": "^0.25.0"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "tabWidth": 4,
+    "useTabs": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "prettier": "^1.15.3"
   }
 }
