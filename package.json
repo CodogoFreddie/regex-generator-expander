@@ -1,12 +1,9 @@
 {
-	"name": "regex-generator-expander",
-	"version": "1.0.0",
-	"description": "",
+	"name": "@freddieridell/regex-generator-expander",
+	"version": "0.0.1",
+	"description": "A system for building probablistic regular expresion expanders for text generation",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
+	"author": "Freddie Ridell <contact@freddieridell.com>",
 	"license": "ISC",
 	"dependencies": {
 		"ramda": "^0.25.0"
